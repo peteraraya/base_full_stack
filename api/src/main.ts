@@ -13,4 +13,7 @@ async function bootstrap() {
   // Finalmente, la aplicación escucha en el puerto definido en las variables de entorno, o en el 3000 por defecto.
   await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('Error during bootstrap:', err);
+  process.exit(1);
+});
