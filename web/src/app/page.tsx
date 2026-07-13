@@ -137,6 +137,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Sección de Preguntas Frecuentes (FAQ) */}
+        <div className="mt-32 w-full max-w-4xl mx-auto mb-20 text-left">
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Preguntas Frecuentes</h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">¿Cómo funciona la prueba gratuita?</h3>
+              <p className="text-gray-600">Puedes probar todas las funcionalidades del plan Pro de forma gratuita durante 14 días. No se requiere tarjeta de crédito para comenzar.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">¿Puedo cambiar de plan más adelante?</h3>
+              <p className="text-gray-600">Sí, puedes mejorar o degradar tu plan en cualquier momento desde el panel de configuración de tu cuenta. Los cambios se aplicarán en tu próximo ciclo de facturación.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
