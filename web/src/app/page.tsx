@@ -29,7 +29,7 @@ export default function Home() {
         </h1>
         
         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-          La plataforma definitiva para equipos ágiles. Organiza tareas, colabora en tiempo real y aumenta la productividad de tu empresa.
+          La plataforma definitiva para equipos ágiles. Organiza tareas, colabora en tiempo real y aumenta la productividad de tu empresa. (Prueba 2 de despliegue)
         </p>
 
         {/* Estado del Backend (Prueba de Despliegue) */}
