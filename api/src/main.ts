@@ -7,10 +7,15 @@ async function bootstrap() {
   // NestFactory.create() toma el módulo principal (AppModule) y construye el árbol de dependencias.
   const app = await NestFactory.create(AppModule);
 
-  // Aquí podemos configurar CORS, validaciones globales, interceptores, etc.
-  // app.enableCors();
+  // Configuración de CORS habilitada para permitir peticiones del frontend
+  app.enableCors({
+    origin: '*', // En producción puedes limitarlo a tu dominio de Vercel
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  });
 
-  // Finalmente, la aplicación escucha en el puerto definido en las variables de entorno, o en el 3000 por defecto.
   await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('Error during bootstrap:', err);
+  process.exit(1);
+});
