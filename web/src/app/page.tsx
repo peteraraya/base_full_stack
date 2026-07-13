@@ -1,6 +1,26 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [apiResponse, setApiResponse] = useState<string>('Conectando con el backend...');
+
+  useEffect(() => {
+    // Apunta a la API definida en variables de entorno, o usa localhost por defecto
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+
+    fetch(apiUrl)
+      .then((res) => res.text())
+      .then((data) => {
+        setApiResponse(data);
+      })
+      .catch((err) => {
+        console.error('Error conectando a la API:', err);
+        setApiResponse('Error: No se pudo conectar a la API.');
+      });
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4">
       <div className="z-10 w-full max-w-5xl items-center justify-between text-center">
@@ -11,6 +31,14 @@ export default function Home() {
         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
           La plataforma definitiva para equipos ágiles. Organiza tareas, colabora en tiempo real y aumenta la productividad de tu empresa.
         </p>
+
+        {/* Estado del Backend (Prueba de Despliegue) */}
+        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-10 inline-block">
+          <p className="text-sm font-semibold text-gray-500 mb-1">Estado del servidor (NestJS):</p>
+          <div className="text-md font-bold text-green-600">
+            {apiResponse}
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link href="#" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all text-lg">
