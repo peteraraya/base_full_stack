@@ -75,4 +75,4 @@ El frontend web estará disponible en [http://localhost:3001](http://localhost:3
 
 ## 👨‍💻 Autor
 
-Construido para demostrar habilidades avanzadas en el desarrollo full-stack. ¡Siéntete libre de explorar el código y la arquitectura!
+Construido por Pedro Araya Gálvez para demostrar habilidades avanzadas en el desarrollo full-stack. ¡Siéntete libre de explorar el código y la arquitectura!
